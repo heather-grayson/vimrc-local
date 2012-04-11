@@ -1,0 +1,23 @@
+" kill utf-8 bytemarks
+set nobomb
+setglobal nobomb
+au BufReadPost setlocal nobomb
+
+" Set colorscheme
+color twilight
+
+" No spaces. Use tabs
+set noexpandtab
+
+" No spell checking by default 
+set nospell
+
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 10
+  elseif has("gui_win32")
+    set guifont=Courier\ New:h9:cANSI
+  endif
+endif
+
+let g:snips_author = 'James Tomasino <james@tomasino.org>'
