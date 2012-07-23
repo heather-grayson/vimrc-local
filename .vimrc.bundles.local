@@ -1,0 +1,50 @@
+g:override_spf13_bundles = 1
+
+Bundle 'spf13/vim-colors'
+Bundle 'tpope/vim-surround'
+Bundle 'AutoClose'
+Bundle 'kien/ctrlp.vim'
+Bundle 'vim-scripts/sessionman.vim'
+Bundle 'matchit.zip'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'godlygeek/csapprox'
+Bundle 'flazz/vim-colorschemes'
+
+
+source $HOME/.vim/bundle/snipmate-snippets/snippets/support_functions.vim 
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'godlygeek/tabular'
+Bundle 'majutsushi/tagbar'
+Bundle 'Shougo/neocomplcache'
+
+" PHP
+Bundle 'spf13/PIV'
+
+" Python
+Bundle 'klen/python-mode'
+Bundle 'python.vim'
+Bundle 'python_match.vim'
+Bundle 'pythoncomplete'
+
+" JavaScript
+Bundle 'leshill/vim-json'
+Bundle 'groenewege/vim-less'
+Bundle 'taxilian/vim-web-indent'
+
+" HTML
+Bundle 'HTML-AutoCloseTag'
+Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
+
+" Ruby
+Bundle 'rails.vim'
+
+" Misc
+Bundle 'spf13/vim-markdown'
+Bundle 'spf13/vim-preview'
+Bundle 'tpope/vim-cucumber'
+Bundle 'Puppet-Syntax-Highlighting'
+
+Bundle 'jamestomasino/actionscript-vim-bundle'
+Bundle 'sjl/gundo.vim'
