@@ -1,3 +1,6 @@
+" Anything to get rid of Nerd Tree
+let g:nerdtree_tabs_open_on_gui_startup=0
+
 " kill utf-8 bytemarks
 set nobomb
 setglobal nobomb
@@ -25,9 +28,6 @@ if has("gui_running")
     set guifont=Dina:h8:cANSI
   endif
 endif
-
-" figure out how to hide NERDTree by default
-let NERDTreeKeepTreeInNewTab=0
 
 nmap <Leader>e= :Tabularize /=<CR>
 vmap <Leader>e= :Tabularize /=<CR>

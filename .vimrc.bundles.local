@@ -1,5 +1,3 @@
-g:override_spf13_bundles = 1
-
 Bundle 'spf13/vim-colors'
 Bundle 'tpope/vim-surround'
 Bundle 'AutoClose'
