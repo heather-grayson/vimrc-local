@@ -60,3 +60,5 @@ nnoremap <F5> :GundoToggle<CR>
 
 let g:snips_author = 'James Tomasino <james@tomasino.org>'
 
+" Position gitcommits at top line no matter what
+autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
