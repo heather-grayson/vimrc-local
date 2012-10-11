@@ -1,45 +1,25 @@
 " Anything to get rid of Nerd Tree
-let g:nerdtree_tabs_open_on_gui_startup=0
+" let g:nerdtree_tabs_open_on_gui_startup=0
 
 " kill utf-8 bytemarks
 set nobomb
 setglobal nobomb
 au BufReadPost setlocal nobomb
 
-" Set colorscheme
-color twilight
-
 " No spaces. Use tabs
 set noexpandtab
 
-" Don't ignore case
-set noignorecase
+" Colorscheme
+if has('gui_running')
+	color twilight
+	set transparency=0
+endif
 
 " No error bells
 set noerrorbells
 
 " No spell checking by default 
 set nospell
-
-if has("gui_running")
-  if has("gui_gtk2")
-    set guifont=Inconsolata\ 10
-  elseif has("gui_win32")
-    set guifont=Dina:h8:cANSI
-  endif
-endif
-
-nmap <Leader>e= :Tabularize /=<CR>
-vmap <Leader>e= :Tabularize /=<CR>
-nmap <Leader>e: :Tabularize /:<CR>
-vmap <Leader>e: :Tabularize /:<CR>
-nmap <Leader>e:: :Tabularize /:\zs<CR>
-vmap <Leader>e:: :Tabularize /:\zs<CR>
-nmap <Leader>e, :Tabularize /,<CR>
-vmap <Leader>e, :Tabularize /,<CR>
-nmap <Leader>e<Bar> :Tabularize /<Bar><CR>
-vmap <Leader>e<Bar> :Tabularize /<Bar><CR>
-
 
 " StripTrailingWhitespace function
 function! <SID>StripTrailingWhitespaces()
@@ -54,9 +34,7 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-au BufWritePre *.py,*.js,*.as,*.scss,*.css :call <SID>StripTrailingWhitespaces()
-
-nnoremap <F5> :GundoToggle<CR>
+au BufWritePre *.py,*.js,*.scss,*.as :call <SID>StripTrailingWhitespaces()
 
 let g:snips_author = 'James Tomasino <james@tomasino.org>'
 
