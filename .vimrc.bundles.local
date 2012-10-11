@@ -37,6 +37,7 @@ Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 
 " Ruby
 Bundle 'rails.vim'
+Bundle 'tpope/vim-haml'
 
 " Misc
 Bundle 'spf13/vim-markdown'
@@ -46,3 +47,4 @@ Bundle 'Puppet-Syntax-Highlighting'
 
 Bundle 'jamestomasino/actionscript-vim-bundle'
 Bundle 'sjl/gundo.vim'
+Bundle 'vim-scripts/Color-Scheme-Explorer'
