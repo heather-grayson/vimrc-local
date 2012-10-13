@@ -12,7 +12,9 @@ set noexpandtab
 " Colorscheme
 if has('gui_running')
 	color twilight
-	set transparency=0
+	if has('gui_macvim')
+		set transparency=0
+	endif
 endif
 
 " No error bells
