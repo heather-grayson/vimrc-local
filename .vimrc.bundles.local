@@ -1,1 +1,3 @@
 Bundle 'sjl/gundo.vim'
+Bundle 'jamestomasino/vim-writeroom'
+
