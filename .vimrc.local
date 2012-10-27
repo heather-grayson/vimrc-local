@@ -54,3 +54,9 @@ let g:snips_author = 'James Tomasino <james@tomasino.org>'
 
 " Position gitcommits at top line no matter what
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
+
+" Highlight past 80 columns
+if has('gui_running')
+    highlight OverLength guibg=#592929
+    match OverLength /\%>80v.\+/
+endif"
