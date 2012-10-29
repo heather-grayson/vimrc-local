@@ -56,9 +56,5 @@ let g:snips_author = 'James Tomasino <james@tomasino.org>'
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
 " Highlight past 80 columns
-if has('gui_running')
-    highlight OverLength guibg=#592929
-    match OverLength /\%>80v.\+/
-endif
 set colorcolumn=80
 highlight ColorColumn guibg=grey15
