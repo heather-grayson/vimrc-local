@@ -55,6 +55,9 @@ let g:snips_author = 'James Tomasino <james@tomasino.org>'
 " Position gitcommits at top line no matter what
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
+" Disable bufexplorer until the weird buffer bugs are fixed
+let g:bufexplorer_version = "disabled"
+
 " Highlight past 80 columns
 set colorcolumn=80
 highlight ColorColumn guibg=grey15
