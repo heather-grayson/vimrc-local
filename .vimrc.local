@@ -1,5 +1,12 @@
-" Anything to get rid of Nerd Tree
-" let g:nerdtree_tabs_open_on_gui_startup=0
+" disable bufexplorer until the weird buffer bugs are fixed
+let g:bufexplorer_version = "disabled"
+
+" disable neocomplcache
+let g:neocomplcache_disable_auto_complete = 1
+
+" disable numbers.vim
+let g:numbers = 'disable'
+
 
 " kill utf-8 bytemarks
 set nobomb
@@ -23,8 +30,6 @@ set noerrorbells
 " No spell checking by default 
 set nospell
 
-" neocomplcache
-let g:neocomplcache_disable_auto_complete = 1
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
 function! s:check_back_space()"{{{
 let col = col('.') - 1
@@ -54,9 +59,6 @@ let g:snips_author = 'James Tomasino <james@tomasino.org>'
 
 " Position gitcommits at top line no matter what
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
-
-" Disable bufexplorer until the weird buffer bugs are fixed
-let g:bufexplorer_version = "disabled"
 
 " Highlight past 80 columns
 set colorcolumn=80
