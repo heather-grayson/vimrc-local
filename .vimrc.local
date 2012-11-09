@@ -60,6 +60,7 @@ let g:snips_author = 'James Tomasino <james@tomasino.org>'
 " Position gitcommits at top line no matter what
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
-" Highlight past 80 columns
+" Highlight past 80 columns and keep it dark grey
 set colorcolumn=80
+autocmd ColorScheme * highlight ColorColumn guibg=grey15
 highlight ColorColumn guibg=grey15
