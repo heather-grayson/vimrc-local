@@ -3,12 +3,18 @@ let g:bufexplorer_version = 'disabled'
 
 " disable neocomplcache
 let g:neocomplcache_disable_auto_complete = 1
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
+function! s:check_back_space()"{{{
+let col = col('.') - 1
+return !col || getline('.')[col - 1] =~ '\s'
+endfunction"}}
+let g:neocomplcache_enable_auto_select = 1
+inoremap <expr><C-l> neocomplcache#complete_common_string()
+inoremap <expr><C-h> neocomplcache#smart_close_popup().“\<C-h>”
+inoremap <expr><BS> neocomplcache#smart_close_popup().“\<C-h>”
 
 " disable numbers.vim
 let g:numbers = 'disabled'
-
-" disable Better-CSS-Syntax-for-Vim
-let g:BetterCSSSyntaxforVim = 'disabled'
 
 " kill utf-8 bytemarks
 set nobomb
@@ -43,17 +49,6 @@ vmap <C-Down> xp`[V`]
 " Visually select last edited/pasted text
 nmap gV `[v`]
 
-
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
-function! s:check_back_space()"{{{
-let col = col('.') - 1
-return !col || getline('.')[col - 1] =~ '\s'
-endfunction"}}
-let g:neocomplcache_enable_auto_select = 1
-inoremap <expr><C-l> neocomplcache#complete_common_string()
-inoremap <expr><C-h> neocomplcache#smart_close_popup().“\<C-h>”
-inoremap <expr><BS> neocomplcache#smart_close_popup().“\<C-h>”
-
 " StripTrailingWhitespace function
 function! <SID>StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
@@ -78,3 +73,6 @@ autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 set colorcolumn=80
 autocmd ColorScheme * highlight ColorColumn guibg=grey15
 highlight ColorColumn guibg=grey15
+
+" Source the vimrc file after saving .vimrc.local
+autocmd bufwritepost .vimrc.local source $MYVIMRC
