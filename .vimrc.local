@@ -32,6 +32,18 @@ set noerrorbells
 " No spell checking by default 
 set nospell
 
+" Visual text bubbling remap from vim-unimpared
+" Bubble single lines
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+" Bubble multiple lines
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
+
+" Visually select last edited/pasted text
+nmap gV `[v`]
+
+
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
 function! s:check_back_space()"{{{
 let col = col('.') - 1
