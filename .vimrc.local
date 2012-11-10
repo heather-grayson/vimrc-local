@@ -1,12 +1,14 @@
 " disable bufexplorer until the weird buffer bugs are fixed
-let g:bufexplorer_version = "disabled"
+let g:bufexplorer_version = 'disabled'
 
 " disable neocomplcache
 let g:neocomplcache_disable_auto_complete = 1
 
 " disable numbers.vim
-let g:numbers = 'disable'
+let g:numbers = 'disabled'
 
+" disable Better-CSS-Syntax-for-Vim
+let g:BetterCSSSyntaxforVim = 'disabled'
 
 " kill utf-8 bytemarks
 set nobomb
