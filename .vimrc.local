@@ -15,7 +15,6 @@ endfunction"}}
 let g:neocomplcache_enable_auto_select = 1
 inoremap <expr><C-l> neocomplcache#complete_common_string()
 inoremap <expr><C-h> neocomplcache#smart_close_popup().“\<C-h>”
-inoremap <expr><BS> neocomplcache#smart_close_popup().“\<C-h>”
 
 " disable numbers.vim
 let g:numbers = 'disabled'
