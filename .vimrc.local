@@ -1,6 +1,7 @@
 " Remove certain bundles
 UnBundle 'AutoClose'
 UnBundle 'myusuf3/numbers.vim'
+UnBundle 'mbbill/undotree'
 
 " disable bufexplorer until the weird buffer bugs are fixed
 let g:bufexplorer_version = 'disabled'
@@ -31,7 +32,8 @@ if has('gui_running')
 		set transparency=0
 	endif
 else
-	color jellybeans
+	let g:solarized_termcolors=256
+	color ir_black-256
 	let g:indent_guides_enable_on_vim_startup = 0
 endif
 
