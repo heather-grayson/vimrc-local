@@ -16,9 +16,6 @@ let g:neocomplcache_enable_auto_select = 1
 inoremap <expr><C-l> neocomplcache#complete_common_string()
 inoremap <expr><C-h> neocomplcache#smart_close_popup().“\<C-h>”
 
-" disable numbers.vim
-let g:numbers = 'disabled'
-
 " kill utf-8 bytemarks
 set nobomb
 setglobal nobomb
@@ -27,13 +24,17 @@ au BufReadPost setlocal nobomb
 " No spaces. Use tabs
 set noexpandtab
 
-" Colorscheme
+" GUI / CTERM specifics
 if has('gui_running')
 	color twilight
 	if has('gui_macvim')
 		set transparency=0
 	endif
+else
+	color jellybeans
+	let g:indent_guides_enable_on_vim_startup = 0
 endif
+
 
 " No error bells
 set noerrorbells
@@ -75,7 +76,7 @@ autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 " Highlight past 80 columns and keep it dark grey
 set colorcolumn=80
 autocmd ColorScheme * highlight ColorColumn guibg=grey15
-highlight ColorColumn guibg=grey15
+highlight ColorColumn ctermbg=235 guibg=grey15
 
 " Source the vimrc file after saving .vimrc.local
 autocmd bufwritepost .vimrc.local source $MYVIMRC
