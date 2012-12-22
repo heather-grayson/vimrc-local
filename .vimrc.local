@@ -1,102 +1,155 @@
-" Remove certain bundles
-UnBundle 'AutoClose'
-UnBundle 'myusuf3/numbers.vim'
-UnBundle 'mbbill/undotree'
+" Modeline and Notes {
+" vim: set foldmarker={,} foldlevel=0 foldmethod=marker:
+"
+"   This is the personal .vimrc.local file of James Tomasino.
+"   While much of it is beneficial for general use, I would
+"   recommend picking out the parts you want and understand.
+"
+"   You can find me at http://tomasino.org
+" }
 
-" Bindings
-map <F1> <Esc>
-imap <F1> <Esc>
-cnoremap %% <C-R>=expand('%:h').'/'<cr>
-nnoremap Y y$
-inoremap jk <Esc>
+" Bundle Management {
 
-" disable bufexplorer until the weird buffer bugs are fixed
-let g:bufexplorer_version = 'disabled'
+	" Remove Bundles {
+		UnBundle 'AutoClose'
+		UnBundle 'myusuf3/numbers.vim'
+		UnBundle 'mbbill/undotree'
+	" }
 
-" disable neocomplcache
-let g:neocomplcache_disable_auto_complete = 1
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
-function! s:check_back_space()"{{{
-let col = col('.') - 1
-return !col || getline('.')[col - 1] =~ '\s'
-endfunction"}}
-let g:neocomplcache_enable_auto_select = 1
-inoremap <expr><C-l> neocomplcache#complete_common_string()
-inoremap <expr><C-h> neocomplcache#smart_close_popup().“\<C-h>”
+	" disable bufexplorer until the weird buffer bugs are fixed {
+		let g:bufexplorer_version = 'disabled'
+	" }
 
-" vim-space configuration
-let g:space_no_search = 1
+	" disable neocomplcache {
+		let g:neocomplcache_disable_auto_complete = 1
+	" }
 
-" QuickfixList and ToggleLocationList window toggles
-nmap <script> <silent> <leader>L :call ToggleLocationList()<CR>
-nmap <script> <silent> <leader>Q :call ToggleQuickfixList()<CR>
-
-" Sideways mapping toggles
-nnoremap <S-Left> :SidewaysLeft<cr>
-nnoremap <S-Right> :SidewaysRight<cr>
-
-" kill utf-8 bytemarks
-set nobomb
-setglobal nobomb
-au BufReadPost setlocal nobomb
-
-" No spaces. Use tabs
-set noexpandtab
-
-" GUI / CTERM specifics
-if has('gui_running')
-	color twilight
-	if has('gui_macvim')
-		set transparency=0
-	endif
-else
-	let g:solarized_termcolors=256
-	color ir_black-256
-	let g:indent_guides_enable_on_vim_startup = 0
-endif
+" }
 
 
-" No error bells
-set noerrorbells
+" General Settings {
 
-" No spell checking by default 
-set nospell
+	" kill utf-8 bytemarks {
+		set nobomb
+		setglobal nobomb
+		au BufReadPost setlocal nobomb
+	" }
 
-" Visual text bubbling remap from vim-unimpared
-" Bubble single lines
-nmap <C-Up> ddkP
-nmap <C-Down> ddp
-" Bubble multiple lines
-vmap <C-Up> xkP`[V`]
-vmap <C-Down> xp`[V`]
+	" No spaces. Use tabs {
+		set noexpandtab
+	" }
 
-" Visually select last edited/pasted text
-nmap gV `[v`]
+	" No error bells {
+		set noerrorbells
+	" }
 
-" StripTrailingWhitespace function
-function! <SID>StripTrailingWhitespaces()
-    " Preparation: save last search, and cursor position.
-    let _s=@/
-    let l = line(".")
-    let c = col(".")
-    " Do the business:
-    %s/\s\+$//e
-    " Clean up: restore previous search history, and cursor position
-    let @/=_s
-    call cursor(l, c)
-endfunction
+	" No spell checking by default {
+		set nospell
+	" }
 
-au BufWritePre *.py,*.js,*.scss,*.as :call <SID>StripTrailingWhitespaces()
+	" Authoring {
+		let g:snips_author = 'James Tomasino <james@tomasino.org>'
+	" }
 
-let g:snips_author = 'James Tomasino <james@tomasino.org>'
+" }
 
-" Position gitcommits at top line no matter what
-autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
-" Highlight past 80 columns and keep it dark grey
-set colorcolumn=80
-autocmd ColorScheme * highlight ColorColumn guibg=grey15
-highlight ColorColumn ctermbg=235 guibg=grey15
+" Key Mappings {
 
-" Source the vimrc file after saving .vimrc.local
-autocmd bufwritepost .vimrc.local source $MYVIMRC
+	" General Mappings {
+		map <F1> <Esc>
+		imap <F1> <Esc>
+		cnoremap %% <C-R>=expand('%:h').'/'<cr>
+		nnoremap Y y$
+		inoremap jk <Esc>
+	" }
+
+	" QuickfixList and ToggleLocationList window toggles {
+		nnoremap <script> <silent> <leader>L :call ToggleLocationList()<CR>
+		nnoremap <script> <silent> <leader>Q :call ToggleQuickfixList()<CR>
+	" }
+
+	" Sideways mapping toggles {
+		nnoremap <S-Left> :SidewaysLeft<cr>
+		nnoremap <S-Right> :SidewaysRight<cr>
+	" }
+
+
+	" Visual text bubbling remap from vim-unimpared {
+		nnoremap <C-Up> ddkP
+		nnoremap <C-Down> ddp
+		vmap <C-Up> xkP`[V`]
+		vmap <C-Down> xp`[V`]
+	" }
+
+	" Visually select last edited/pasted text {
+		nnoremap gV `[v`]
+	" }
+
+" }
+
+
+" Plugin Tweaks {
+
+	" Tweak neocomplecache to offer dropdown only when you hit tab {
+		inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
+		function! s:check_back_space()"{{{
+		let col = col('.') - 1
+		return !col || getline('.')[col - 1] =~ '\s'
+		endfunction"}}
+		let g:neocomplcache_enable_auto_select = 1
+		inoremap <expr><C-l> neocomplcache#complete_common_string()
+		inoremap <expr><C-h> neocomplcache#smart_close_popup().“\<C-h>”
+	" }
+
+" }
+
+
+
+" Visual Tweaks {
+
+	" Position gitcommits at top line no matter what {
+		autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
+	" }
+
+	" Highlight past 80 columns and keep it dark grey {
+		set colorcolumn=80
+		autocmd ColorScheme * highlight ColorColumn guibg=grey15
+		highlight ColorColumn ctermbg=235 guibg=grey15
+	" }
+
+	" GUI / CTERM specifics {
+		if has('gui_running')
+			color twilight
+			if has('gui_macvim')
+				set transparency=0
+			endif
+		else
+			let g:solarized_termcolors=256
+			color ir_black-256
+			let g:indent_guides_enable_on_vim_startup = 0
+		endif
+	" }
+
+" }
+
+
+" Functions {
+
+	" StripTrailingWhitespace function {
+		function! <SID>StripTrailingWhitespaces()
+			" Preparation: save last search, and cursor position.
+			let _s=@/
+			let l = line(".")
+			let c = col(".")
+			" Do the business:
+			%s/\s\+$//e
+			" Clean up: restore previous search history, and cursor position
+			let @/=_s
+			call cursor(l, c)
+		endfunction
+
+		au BufWritePre *.py,*.js,*.scss,*.as :call <SID>StripTrailingWhitespaces()
+	" }
+
+" }
