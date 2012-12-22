@@ -17,6 +17,14 @@ let g:neocomplcache_enable_auto_select = 1
 inoremap <expr><C-l> neocomplcache#complete_common_string()
 inoremap <expr><C-h> neocomplcache#smart_close_popup().“\<C-h>”
 
+" QuickfixList and ToggleLocationList window toggles
+nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
+nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
+
+" Sideways mapping toggles
+nnoremap <S-Left> :SidewaysLeft<cr>
+nnoremap <S-Right> :SidewaysRight<cr>
+
 " kill utf-8 bytemarks
 set nobomb
 setglobal nobomb
