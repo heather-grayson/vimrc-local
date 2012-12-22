@@ -3,6 +3,13 @@ UnBundle 'AutoClose'
 UnBundle 'myusuf3/numbers.vim'
 UnBundle 'mbbill/undotree'
 
+" Bindings
+map <F1> <Esc>
+imap <F1> <Esc>
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+nnoremap Y y$
+inoremap jk <Esc>
+
 " disable bufexplorer until the weird buffer bugs are fixed
 let g:bufexplorer_version = 'disabled'
 
@@ -17,9 +24,12 @@ let g:neocomplcache_enable_auto_select = 1
 inoremap <expr><C-l> neocomplcache#complete_common_string()
 inoremap <expr><C-h> neocomplcache#smart_close_popup().“\<C-h>”
 
+" vim-space configuration
+let g:space_no_search = 1
+
 " QuickfixList and ToggleLocationList window toggles
-nmap <script> <silent> <leader>l :call ToggleLocationList()<CR>
-nmap <script> <silent> <leader>q :call ToggleQuickfixList()<CR>
+nmap <script> <silent> <leader>L :call ToggleLocationList()<CR>
+nmap <script> <silent> <leader>Q :call ToggleQuickfixList()<CR>
 
 " Sideways mapping toggles
 nnoremap <S-Left> :SidewaysLeft<cr>
