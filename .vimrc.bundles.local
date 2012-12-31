@@ -1,7 +1,6 @@
 Bundle 'sjl/gundo.vim'
 Bundle 'jamestomasino/vim-writeroom'
 Bundle 'jamestomasino/actionscript-vim-bundle'
-Bundle 'ScrollColors'
 Bundle 'msutherl/vim-colors-ir_black-256'
 Bundle 'AndrewRadev/sideways.vim'
 Bundle 'milkypostman/vim-togglelist'
