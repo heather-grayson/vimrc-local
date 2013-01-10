@@ -12,6 +12,7 @@
 
 	" Remove Bundles {
 		UnBundle 'AutoClose'
+		UnBundle 'amirh/HTML-AutoCloseTag'
 		UnBundle 'spf13/vim-autoclose'
 		UnBundle 'myusuf3/numbers.vim'
 		UnBundle 'mbbill/undotree'
