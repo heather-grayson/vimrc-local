@@ -31,7 +31,7 @@ echo "Thanks for installing vim local scripts"
 # Backup existing file
 echo "Backing up current files"
 today=`date +%Y%m%d`
-for i in $HOME/.vimrc.local $HOME/.vimrc.bundles.local
+for i in $HOME/.vimrc.local $HOME/.vimrc.bundles.local $HOME/.vimrc.encryption.local
 do 
   if [ -e $i ] && [ ! -L $i ] 
     then 
@@ -43,4 +43,4 @@ done
 echo "Setting up simlinks"
 lnif $DIR/.vimrc.local $HOME/.vimrc.local
 lnif $DIR/.vimrc.bundles.local $HOME/.vimrc.bundles.local
-
+lnif $DIR/.vimrc.encryption.local $HOME/.vimrc.encryption.local
