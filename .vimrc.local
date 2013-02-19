@@ -32,6 +32,10 @@
 	" disable easyWindows { 
 		let g:spf13_no_easyWindows = 1
 	" }
+	
+	" disable neosnippet expansion binding { 
+		let g:spf13_no_neosnippet_expand = 1
+	" }
 
 " }
 
