@@ -25,6 +25,9 @@
 		let g:neocomplcache_disable_auto_complete = 1
 	" }
 
+	" disable fastTabs { 
+		let g:spf13_no_fastTabs = 1
+	" }
 " }
 
 
@@ -33,6 +36,7 @@
 	" kill utf-8 bytemarks {
 		set nobomb
 		setglobal nobomb
+		set fileencoding=utf-8
 		au BufReadPost setlocal nobomb
 	" }
 
@@ -63,6 +67,29 @@
 		cnoremap %% <C-R>=expand('%:h').'/'<cr>
 		nnoremap Y y$
 		inoremap jk <Esc>
+	" }
+
+	" Movement Keys {
+		inoremap <up> <nop>
+		vnoremap <up> <nop>
+		inoremap <down> <nop>
+		vnoremap <down> <nop>
+		inoremap <left> <nop>
+		vnoremap <right> <nop>
+		vnoremap <left> <nop>
+		inoremap <right> <nop>
+		" B-A-<start>
+
+		" Tab and window nav with arrows
+		map <up> <C-W>k<C-W>_
+		map <down> <C-W>j<C-W>_
+		map <left> <C-W>h<C-W>_
+		map <right> <C-W>l<C-W>_
+
+		unmap <C-K>
+		unmap <C-J>
+		unmap <C-H>
+		unmap <C-L>
 	" }
 
 	" QuickfixList and ToggleLocationList window toggles {
