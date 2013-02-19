@@ -28,6 +28,11 @@
 	" disable fastTabs { 
 		let g:spf13_no_fastTabs = 1
 	" }
+
+	" disable easyWindows { 
+		let g:spf13_no_easyWindows = 1
+	" }
+
 " }
 
 
@@ -86,10 +91,6 @@
 		map <left> <C-W>h<C-W>_
 		map <right> <C-W>l<C-W>_
 
-		unmap <C-K>
-		unmap <C-J>
-		unmap <C-H>
-		unmap <C-L>
 	" }
 
 	" QuickfixList and ToggleLocationList window toggles {
