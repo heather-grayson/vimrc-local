@@ -5,3 +5,24 @@ Bundle 'msutherl/vim-colors-ir_black-256'
 Bundle 'AndrewRadev/sideways.vim'
 Bundle 'milkypostman/vim-togglelist'
 Bundle 'tomtom/quickfixsigns_vim'
+
+
+" disable bufexplorer until the weird buffer bugs are fixed {
+	let g:bufexplorer_version = 'disabled'
+" }
+
+" disable neocomplcache {
+	let g:neocomplcache_disable_auto_complete = 1
+" }
+
+" disable fastTabs { 
+	let g:spf13_no_fastTabs = 1
+" }
+
+" disable easyWindows { 
+	let g:spf13_no_easyWindows = 1
+" }
+
+" disable neosnippet expansion binding { 
+	let g:spf13_no_neosnippet_expand = 1
+" }
