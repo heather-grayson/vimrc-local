@@ -20,6 +20,10 @@
 " }
 
 
+" FileType Handling {
+	au FileType json setlocal equalprg=python\ -m\ json.tool
+" }
+
 " General Settings {
 
 	" kill utf-8 bytemarks {
