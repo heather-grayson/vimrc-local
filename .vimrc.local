@@ -31,6 +31,13 @@
 
 	" No spaces. Use tabs {
 		set noexpandtab
+		set tabstop=4 
+		set softtabstop=4 
+		set shiftwidth=4
+		function! g:fixTabStops()
+			set tabstop=4 softtabstop=4 shiftwidth=4 noexpandtab
+		endfunction
+		nnoremap <leader>tf :call g:fixTabStops()<CR>
 	" }
 
 	" No error bells {
@@ -56,6 +63,7 @@
 		cnoremap %% <C-R>=expand('%:h').'/'<cr>
 		nnoremap Y y$
 		inoremap jk <Esc>
+		nnoremap <leader>gu :GundoToggle<CR>
 	" }
 
 	" Movement Keys {
