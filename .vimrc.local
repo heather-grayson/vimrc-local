@@ -21,7 +21,18 @@
 
 
 " FileType Handling {
+	filetype plugin indent on
 	au FileType json setlocal equalprg=python\ -m\ json.tool
+
+	" Python Settings {
+		"autocmd BufWritePost *.py call Flake8()
+		let g:syntastic_python_checkers=['flake8', 'pylint']
+		autocmd FileType python setlocal expandtab
+		autocmd FileType python setlocal tabstop=4
+		autocmd FileType python setlocal softtabstop=4
+		autocmd FileType python setlocal shiftwidth=4
+	" }
+
 " }
 
 " General Settings {
