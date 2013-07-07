@@ -15,6 +15,7 @@
 		UnBundle 'amirh/HTML-AutoCloseTag'
 		UnBundle 'myusuf3/numbers.vim'
 		UnBundle 'mbbill/undotree'
+		UnBundle 'Lokaltog/vim-powerline'
 	" }
 
 " }
@@ -138,6 +139,10 @@
 		inoremap <expr><C-h> neocomplcache#smart_close_popup().“\<C-h>”
 	" }
 
+	" Settings for airline {
+		let g:airline_theme='badwolf'
+		let g:airline_powerline_fonts=0
+	" }
 " }
 
 
@@ -157,6 +162,7 @@
 	" GUI / CTERM specifics {
 		if has('gui_running')
 			color twilight
+			set guifont=Source\ Code\ Pro\ for\ Powerline:h11,Menlo\ Regular:h15,Consolas\ Regular:h16,Courier\ New\ Regular:h18
 			if has('gui_macvim')
 				set transparency=0
 			endif
