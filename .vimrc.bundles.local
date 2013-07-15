@@ -8,6 +8,7 @@ Bundle 'tomtom/quickfixsigns_vim'
 Bundle 'orenhe/pylint.vim'
 Bundle 'nvie/vim-flake8'
 Bundle 'bling/vim-airline'
+Bundle 'wakatime/vim-wakatime'
 
 " disable bufexplorer until the weird buffer bugs are fixed {
 	let g:bufexplorer_version = 'disabled'
