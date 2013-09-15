@@ -138,11 +138,6 @@
 		inoremap <expr><C-l> neocomplcache#complete_common_string()
 		inoremap <expr><C-h> neocomplcache#smart_close_popup().“\<C-h>”
 	" }
-
-	" Settings for airline {
-		let g:airline_theme='badwolf'
-		let g:airline_powerline_fonts=0
-	" }
 " }
 
 
@@ -162,7 +157,8 @@
 	" GUI / CTERM specifics {
 		if has('gui_running')
 			color twilight
-			set guifont=Source\ Code\ Pro\ for\ Powerline:h11,Menlo\ Regular:h15,Consolas\ Regular:h16,Courier\ New\ Regular:h18
+			set guifont=Meslo\ LG\ S\ for\ Powerline
+			set encoding=utf-8
 			if has('gui_macvim')
 				set transparency=0
 			endif
