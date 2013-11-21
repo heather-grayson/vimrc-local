@@ -140,7 +140,23 @@
 	" }
 " }
 
+" Unbinding Tweaks {
 
+	" --this backs out these mappings
+	" --found in the spf13 .vimrc
+	"
+	" noremap $ g$
+	" noremap <End> g<End>
+	" noremap 0 g0
+	" noremap <Home> g<Home>
+	" noremap ^ g^
+	unmap $
+	unmap <End>
+	unmap 0
+	unmap <Home>
+	unmap ^
+
+" }
 
 " Visual Tweaks {
 
